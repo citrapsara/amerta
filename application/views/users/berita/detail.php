@@ -68,7 +68,7 @@
                     </tbody>
                 </table>
               </div>
-              <h4>Dokumen Pendukung</h4>
+              <!-- <h4>Dokumen Pendukung</h4>
               <div class="table-responsive">
 			                  <table class="table table-bordered table-striped" width="100%">
                   <tbody>
@@ -76,33 +76,33 @@
                       <th valign="top" width="160">Surat Undangan</th>
                       <th valign="top" width="1">:</th>
                       <td>
-                        <a href="<?php echo $query->lamp_surat_undangan; ?>" target="_blank"><?php echo $query->lamp_surat_undangan; ?></a>
+                        <a href="<?php //echo $query->lamp_surat_undangan; ?>" target="_blank"><?php //echo $query->lamp_surat_undangan; ?></a>
                       </td>
                     </tr>
                     <tr>
                       <th valign="top">Sambutan</th>
                       <th valign="top">:</th>
                       <td>
-                        <a href="<?php echo $query->lamp_sambutan; ?>" target="_blank"><?php echo $query->lamp_sambutan; ?></a>
+                        <a href="<?php //echo $query->lamp_sambutan; ?>" target="_blank"><?php //echo $query->lamp_sambutan; ?></a>
                       </td>
                     </tr>
                     <tr>
                       <th valign="top">Paparan</th>
                       <th valign="top">:</th>
                       <td>
-                        <a href="<?php echo $query->lamp_paparan; ?>" target="_blank"><?php echo $query->lamp_paparan; ?></a>
+                        <a href="<?php //echo $query->lamp_paparan; ?>" target="_blank"><?php //echo $query->lamp_paparan; ?></a>
                       </td>
                     </tr>
                     <tr>
                       <th valign="top">Dokumen Pendukung Lainnya</th>
                       <th valign="top">:</th>
                       <td>
-                        <a href="<?php echo $query->lamp_lain; ?>" target="_blank"><?php echo $query->lamp_lain; ?></a>
+                        <a href="<?php //echo $query->lamp_lain; ?>" target="_blank"><?php //echo $query->lamp_lain; ?></a>
                       </td>
                     </tr>
                     </tbody>
                 </table>
-              </div>
+              </div> -->
               <h4>Dokumentasi</h4>
               <div class="table-responsive">
 			                  <table class="table table-bordered table-striped" width="100%">

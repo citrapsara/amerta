@@ -70,7 +70,7 @@
                     
                     <hr>
                     
-                    <h4>Unggah Dokumen Pendukung</h4>
+                    <!-- <h4>Unggah Dokumen Pendukung</h4>
                     <div class="alert alert-success">
                       <strong><i>Catatan :</i></strong> Dokumen pendukung digunakan untuk penambahan informasi saat proses verifikasi oleh tim Humas. Dokumen pendukung dapat berupa sambutan, notula, undangan/nota dinas, paparan dan dokumen lain yang bisa menjadi bahan berita. Jika terdapat lebih dari 1 file, seluruh file mohon di-zip terlebih dahulu.
                     </div>
@@ -78,32 +78,32 @@
                     <div class="form-group">
                       <label class="col-lg-12">Surat Undangan</label>
                       <div class="col-lg-12">
-                        <input type="file" name="lamp_surat_undangan" class="form-control" value="<?php echo $query->lamp_surat_undangan; ?>">
-                        <span><strong>File terupload: </strong><a href="<?php echo $query->lamp_surat_undangan; ?>" target="_blank"><?php echo $query->lamp_surat_undangan;?></a></span>
+                        <input type="file" name="lamp_surat_undangan" class="form-control" value="<?php //echo $query->lamp_surat_undangan; ?>">
+                        <span><strong>File terupload: </strong><a href="<?php //echo $query->lamp_surat_undangan; ?>" target="_blank"><?php //echo $query->lamp_surat_undangan;?></a></span>
                       </div>
                     </div>
                     <div class="form-group">
                       <label class="col-lg-12">Sambutan</label>
                       <div class="col-lg-12">
-                        <input type="file" name="lamp_sambutan" class="form-control" value="<?php echo $query->lamp_sambutan; ?>">
-                        <span><strong>File terupload: </strong><a href="<?php echo $query->lamp_sambutan; ?>" target="_blank"><?php echo $query->lamp_sambutan;?></a></span>
+                        <input type="file" name="lamp_sambutan" class="form-control" value="<?php //echo $query->lamp_sambutan; ?>">
+                        <span><strong>File terupload: </strong><a href="<?php //echo $query->lamp_sambutan; ?>" target="_blank"><?php //echo $query->lamp_sambutan;?></a></span>
                       </div>
                     </div>
                     <div class="form-group">
                       <label class="col-lg-12">Paparan</label>
                       <div class="col-lg-12">
-                        <input type="file" name="lamp_paparan" class="form-control" value="<?php echo $query->lamp_paparan; ?>">
-                        <span><strong>File terupload: </strong><a href="<?php echo $query->lamp_paparan; ?>" target="_blank"><?php echo $query->lamp_paparan;?></a></span>
+                        <input type="file" name="lamp_paparan" class="form-control" value="<?php //echo $query->lamp_paparan; ?>">
+                        <span><strong>File terupload: </strong><a href="<?php //echo $query->lamp_paparan; ?>" target="_blank"><?php //echo $query->lamp_paparan;?></a></span>
                       </div>
                     </div>
                     <div class="form-group">
                       <label class="col-lg-12">Dokumen Pendukung Lainnya</label>
                       <div class="col-lg-12">
-                        <input type="file" name="lamp_lain" class="form-control" value="<?php echo $query->lamp_lain; ?>">
-                        <span><strong>File terupload: </strong><a href="<?php echo $query->lamp_lain; ?>" target="_blank"><?php echo $query->lamp_lain;?></a></span>
+                        <input type="file" name="lamp_lain" class="form-control" value="<?php //echo $query->lamp_lain; ?>">
+                        <span><strong>File terupload: </strong><a href="<?php //echo $query->lamp_lain; ?>" target="_blank"><?php //echo $query->lamp_lain;?></a></span>
                       </div>
                     </div>
-                  <hr>
+                  <hr> -->
 
                   <h4>Unggah Dokumentasi</h4>
                   <div class="alert alert-success">

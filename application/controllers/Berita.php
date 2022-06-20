@@ -111,8 +111,6 @@ class Berita extends CI_Controller {
 				));
 
 				if (isset($_POST['btnsimpan'])) {
-					
-					
 					$nama_kegiatan 	 = htmlentities(strip_tags($this->input->post('nama_kegiatan')));
 					$tempat_kegiatan 	 = htmlentities(strip_tags($this->input->post('tempat_kegiatan')));
 					$tgl_kegiatan 	 = htmlentities(strip_tags($this->input->post('tgl_kegiatan')));
@@ -122,49 +120,49 @@ class Berita extends CI_Controller {
 
 					$simpan = '';
 
-					if ( ! $this->upload->do_upload('lamp_surat_undangan'))
-					{
-						$lamp_surat_undangan = '';
-					}
-					else
-					{
-						$gbr = $this->upload->data();
-						$filename = "$lokasi/".$gbr['file_name'];
-						$lamp_surat_undangan = preg_replace('/ /', '_', $filename);
-					}
+					// if ( ! $this->upload->do_upload('lamp_surat_undangan'))
+					// {
+					// 	$lamp_surat_undangan = '';
+					// }
+					// else
+					// {
+					// 	$gbr = $this->upload->data();
+					// 	$filename = "$lokasi/".$gbr['file_name'];
+					// 	$lamp_surat_undangan = preg_replace('/ /', '_', $filename);
+					// }
 
-					if ( ! $this->upload->do_upload('lamp_sambutan'))
-					{
-						$lamp_sambutan = '';
-					}
-					 else
-					{
-						$gbr = $this->upload->data();
-						$filename = "$lokasi/".$gbr['file_name'];
-						$lamp_sambutan = preg_replace('/ /', '_', $filename);
-					}
+					// if ( ! $this->upload->do_upload('lamp_sambutan'))
+					// {
+					// 	$lamp_sambutan = '';
+					// }
+					//  else
+					// {
+					// 	$gbr = $this->upload->data();
+					// 	$filename = "$lokasi/".$gbr['file_name'];
+					// 	$lamp_sambutan = preg_replace('/ /', '_', $filename);
+					// }
 
-					if ( ! $this->upload->do_upload('lamp_paparan'))
-					{
-						$lamp_paparan = "";
-					}
-					else
-					{
-						$gbr = $this->upload->data();
-						$filename = "$lokasi/".$gbr['file_name'];
-						$lamp_paparan = preg_replace('/ /', '_', $filename);
-					}
+					// if ( ! $this->upload->do_upload('lamp_paparan'))
+					// {
+					// 	$lamp_paparan = "";
+					// }
+					// else
+					// {
+					// 	$gbr = $this->upload->data();
+					// 	$filename = "$lokasi/".$gbr['file_name'];
+					// 	$lamp_paparan = preg_replace('/ /', '_', $filename);
+					// }
 
-					if ( ! $this->upload->do_upload('lamp_lain'))
-					{
-						$lamp_lain = '';
-					}
-					else
-					{
-						$gbr = $this->upload->data();
-						$filename = "$lokasi/".$gbr['file_name'];
-						$lamp_lain = preg_replace('/ /', '_', $filename);
-					}
+					// if ( ! $this->upload->do_upload('lamp_lain'))
+					// {
+					// 	$lamp_lain = '';
+					// }
+					// else
+					// {
+					// 	$gbr = $this->upload->data();
+					// 	$filename = "$lokasi/".$gbr['file_name'];
+					// 	$lamp_lain = preg_replace('/ /', '_', $filename);
+					// }
 
 					if ( ! $this->upload->do_upload('lamp_foto1'))
 					{
@@ -238,10 +236,10 @@ class Berita extends CI_Controller {
 
 					if ($simpan=='y') {
 						$data = array(
-							'lamp_surat_undangan'	=> $lamp_surat_undangan,
-							'lamp_sambutan'			=> $lamp_sambutan,
-							'lamp_paparan'			=> $lamp_paparan,
-							'lamp_lain'				=> $lamp_lain,
+							// 'lamp_surat_undangan'	=> $lamp_surat_undangan,
+							// 'lamp_sambutan'			=> $lamp_sambutan,
+							// 'lamp_paparan'			=> $lamp_paparan,
+							// 'lamp_lain'				=> $lamp_lain,
 							'lamp_foto1'			=> $lamp_foto1,
 							'lamp_foto2'			=> $lamp_foto2,
 							'lamp_foto3'			=> $lamp_foto3,
@@ -301,10 +299,10 @@ class Berita extends CI_Controller {
 
 					$cek_file = $this->db->get_where('tbl_berita',"id_berita='$id'");
 
-					$cek_lamp_surat_undangan = $cek_file->row()->lamp_surat_undangan;
-					$cek_lamp_sambutan = $cek_file->row()->lamp_sambutan;
-					$cek_lamp_paparan = $cek_file->row()->lamp_paparan;
-					$cek_lamp_lain = $cek_file->row()->lamp_lain;
+					// $cek_lamp_surat_undangan = $cek_file->row()->lamp_surat_undangan;
+					// $cek_lamp_sambutan = $cek_file->row()->lamp_sambutan;
+					// $cek_lamp_paparan = $cek_file->row()->lamp_paparan;
+					// $cek_lamp_lain = $cek_file->row()->lamp_lain;
 					$cek_lamp_foto1 = $cek_file->row()->lamp_foto1;
 					$cek_lamp_foto2 = $cek_file->row()->lamp_foto2;
 					$cek_lamp_foto3 = $cek_file->row()->lamp_foto3;
@@ -312,89 +310,89 @@ class Berita extends CI_Controller {
 					$cek_lamp_foto5 = $cek_file->row()->lamp_foto5;
 					$cek_lamp_foto6 = $cek_file->row()->lamp_foto6;
 
-					if ($_FILES['lamp_surat_undangan']['error'] <> 4) {
-						if ( ! $this->upload->do_upload('lamp_surat_undangan'))
-						{
-							$simpan = 'n';
-							$pesan  = htmlentities(strip_tags($this->upload->display_errors('<p>', '</p>')));
-						}
-						else
-						{
-							if ($cek_lamp_surat_undangan!='') {
-								unlink($cek_lamp_surat_undangan);
-							}
-							$gbr = $this->upload->data();
-							$filename = "$lokasi/".$gbr['file_name'];
-							$lamp_surat_undangan = preg_replace('/ /', '_', $filename);
-							$simpan = 'y';
-						}	
-					} else {
-						$lamp_surat_undangan = $cek_lamp_surat_undangan;
-						$simpan = 'y';
-					}
+					// if ($_FILES['lamp_surat_undangan']['error'] <> 4) {
+					// 	if ( ! $this->upload->do_upload('lamp_surat_undangan'))
+					// 	{
+					// 		$simpan = 'n';
+					// 		$pesan  = htmlentities(strip_tags($this->upload->display_errors('<p>', '</p>')));
+					// 	}
+					// 	else
+					// 	{
+					// 		if ($cek_lamp_surat_undangan!='') {
+					// 			unlink($cek_lamp_surat_undangan);
+					// 		}
+					// 		$gbr = $this->upload->data();
+					// 		$filename = "$lokasi/".$gbr['file_name'];
+					// 		$lamp_surat_undangan = preg_replace('/ /', '_', $filename);
+					// 		$simpan = 'y';
+					// 	}	
+					// } else {
+					// 	$lamp_surat_undangan = $cek_lamp_surat_undangan;
+					// 	$simpan = 'y';
+					// }
 
-					if ($_FILES['lamp_sambutan']['error'] <> 4) {
-						if ( ! $this->upload->do_upload('lamp_sambutan'))
-						{
-							$simpan = 'n';
-							$pesan  = htmlentities(strip_tags($this->upload->display_errors('<p>', '</p>')));
-						}
-						else
-						{
-							if ($cek_lamp_sambutan!='') {
-								unlink($cek_lamp_sambutan);
-							}
-							$gbr = $this->upload->data();
-							$filename = "$lokasi/".$gbr['file_name'];
-							$lamp_sambutan = preg_replace('/ /', '_', $filename);
-							$simpan = 'y';
-						}	
-					} else {
-						$lamp_sambutan = $cek_lamp_sambutan;
-						$simpan = 'y';
-					}
+					// if ($_FILES['lamp_sambutan']['error'] <> 4) {
+					// 	if ( ! $this->upload->do_upload('lamp_sambutan'))
+					// 	{
+					// 		$simpan = 'n';
+					// 		$pesan  = htmlentities(strip_tags($this->upload->display_errors('<p>', '</p>')));
+					// 	}
+					// 	else
+					// 	{
+					// 		if ($cek_lamp_sambutan!='') {
+					// 			unlink($cek_lamp_sambutan);
+					// 		}
+					// 		$gbr = $this->upload->data();
+					// 		$filename = "$lokasi/".$gbr['file_name'];
+					// 		$lamp_sambutan = preg_replace('/ /', '_', $filename);
+					// 		$simpan = 'y';
+					// 	}	
+					// } else {
+					// 	$lamp_sambutan = $cek_lamp_sambutan;
+					// 	$simpan = 'y';
+					// }
 
-					if ($_FILES['lamp_paparan']['error'] <> 4) {
-						if ( ! $this->upload->do_upload('lamp_paparan'))
-						{
-							$simpan = 'n';
-							$pesan  = htmlentities(strip_tags($this->upload->display_errors('<p>', '</p>')));
-						}
-						else
-						{
-							if ($cek_lamp_paparan!='') {
-								unlink($cek_lamp_paparan);
-							}
-							$gbr = $this->upload->data();
-							$filename = "$lokasi/".$gbr['file_name'];
-							$lamp_paparan = preg_replace('/ /', '_', $filename);
-							$simpan = 'y';
-						}	
-					} else {
-						$lamp_paparan = $cek_lamp_paparan;
-						$simpan = 'y';
-					}
+					// if ($_FILES['lamp_paparan']['error'] <> 4) {
+					// 	if ( ! $this->upload->do_upload('lamp_paparan'))
+					// 	{
+					// 		$simpan = 'n';
+					// 		$pesan  = htmlentities(strip_tags($this->upload->display_errors('<p>', '</p>')));
+					// 	}
+					// 	else
+					// 	{
+					// 		if ($cek_lamp_paparan!='') {
+					// 			unlink($cek_lamp_paparan);
+					// 		}
+					// 		$gbr = $this->upload->data();
+					// 		$filename = "$lokasi/".$gbr['file_name'];
+					// 		$lamp_paparan = preg_replace('/ /', '_', $filename);
+					// 		$simpan = 'y';
+					// 	}	
+					// } else {
+					// 	$lamp_paparan = $cek_lamp_paparan;
+					// 	$simpan = 'y';
+					// }
 
-					if ($_FILES['lamp_lain']['error'] <> 4) {
-						if ( ! $this->upload->do_upload('lamp_lain'))
-						{
-							$simpan = 'n';
-							$pesan  = htmlentities(strip_tags($this->upload->display_errors('<p>', '</p>')));
-						}
-						else
-						{
-							if ($cek_lamp_lain!='') {
-								unlink($cek_lamp_lain);
-							}
-							$gbr = $this->upload->data();
-							$filename = "$lokasi/".$gbr['file_name'];
-							$lamp_lain = preg_replace('/ /', '_', $filename);
-							$simpan = 'y';
-						}	
-					} else {
-						$lamp_lain = $cek_lamp_lain;
-						$simpan = 'y';
-					}
+					// if ($_FILES['lamp_lain']['error'] <> 4) {
+					// 	if ( ! $this->upload->do_upload('lamp_lain'))
+					// 	{
+					// 		$simpan = 'n';
+					// 		$pesan  = htmlentities(strip_tags($this->upload->display_errors('<p>', '</p>')));
+					// 	}
+					// 	else
+					// 	{
+					// 		if ($cek_lamp_lain!='') {
+					// 			unlink($cek_lamp_lain);
+					// 		}
+					// 		$gbr = $this->upload->data();
+					// 		$filename = "$lokasi/".$gbr['file_name'];
+					// 		$lamp_lain = preg_replace('/ /', '_', $filename);
+					// 		$simpan = 'y';
+					// 	}	
+					// } else {
+					// 	$lamp_lain = $cek_lamp_lain;
+					// 	$simpan = 'y';
+					// }
 
 					if ($_FILES['lamp_foto1']['error'] <> 4) {
 						if ( ! $this->upload->do_upload('lamp_foto1'))
@@ -524,10 +522,10 @@ class Berita extends CI_Controller {
 
 					if ($simpan=='y') {
 						$data = array(
-							'lamp_surat_undangan'	=> $lamp_surat_undangan,
-							'lamp_sambutan'			=> $lamp_sambutan,
-							'lamp_paparan'			=> $lamp_paparan,
-							'lamp_lain'				=> $lamp_lain,
+							// 'lamp_surat_undangan'	=> $lamp_surat_undangan,
+							// 'lamp_sambutan'			=> $lamp_sambutan,
+							// 'lamp_paparan'			=> $lamp_paparan,
+							// 'lamp_lain'				=> $lamp_lain,
 							'lamp_foto1'			=> $lamp_foto1,
 							'lamp_foto2'			=> $lamp_foto2,
 							'lamp_foto3'			=> $lamp_foto3,

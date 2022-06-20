@@ -71,7 +71,7 @@
                     
                     <hr>
                     
-                    <h4>Unggah Dokumen Pendukung</h4>
+                    <!-- <h4>Unggah Dokumen Pendukung</h4>
                     <div class="alert alert-success">
                       <strong><i>Catatan :</i></strong> Dokumen pendukung digunakan untuk penambahan informasi saat proses verifikasi oleh tim Humas. Dokumen pendukung dapat berupa sambutan, notula, undangan/nota dinas, paparan dan dokumen lain yang bisa menjadi bahan berita. Jika terdapat lebih dari 1 file, seluruh file mohon di-zip terlebih dahulu.
                     </div>
@@ -100,7 +100,7 @@
                         <input type="file" name="lamp_lain" class="form-control">
                       </div>
                     </div>
-                  <hr>
+                  <hr> -->
 
                   <h4>Unggah Dokumentasi</h4>
                   <div class="alert alert-success">
